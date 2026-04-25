@@ -25,3 +25,11 @@ env/
 # OS
 .DS_Store
 Thumbs.db
+
+# Logs
+logs/
+*.log
+
+# Local data overrides (never commit real API responses)
+*.local.json
+.env.local
