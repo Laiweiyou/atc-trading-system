@@ -1,0 +1,483 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-04-25",
+    "description": "ATC 歷史事件庫，供 GA-01b 芸芸做歷史比對用",
+    "event_count": 15
+  },
+  "schema": {
+    "event_id": "唯一識別碼，格式 EVT-YYYYMMDD-XXX",
+    "date": "事件發生日期 YYYY-MM-DD",
+    "category": "GEOPOLITICAL / REGULATORY / ECONOMIC / CRYPTO_NATIVE / BLACK_SWAN",
+    "subcategory": "次分類，例如 sanctions, central_bank, exchange_hack",
+    "description": "事件簡述",
+    "key_entities": [
+      "相關國家/組織/人物清單"
+    ],
+    "btc_reaction": {
+      "24h_change_pct": -2.5,
+      "48h_change_pct": -3.8,
+      "7d_change_pct": -1.2
+    },
+    "eth_reaction": {
+      "24h_change_pct": -3.1,
+      "48h_change_pct": -4.5,
+      "7d_change_pct": -1.8
+    },
+    "recovery_days": 5,
+    "max_drawdown_during_event": -8.5,
+    "novelty": "first / repeat / Nth",
+    "escalation": "升級/緩和/維持",
+    "reversibility": "reversible/partial/irreversible"
+  },
+  "events": [
+    {
+      "event_id": "EVT-20220224-001",
+      "date": "2022-02-24",
+      "category": "GEOPOLITICAL",
+      "subcategory": "military_conflict",
+      "description": "俄羅斯全面入侵烏克蘭，引發歐洲二戰後最大規模軍事衝突，西方制裁俄羅斯，能源危機升溫，避險情緒急升後市場轉以加密為避險資產",
+      "key_entities": [
+        "Russia",
+        "Ukraine",
+        "NATO",
+        "EU",
+        "US"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -8.0,
+        "48h_change_pct": -5.0,
+        "7d_change_pct": 15.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -10.0,
+        "48h_change_pct": -7.0,
+        "7d_change_pct": 12.0
+      },
+      "recovery_days": 7,
+      "max_drawdown_during_event": -14.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "partial",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20220509-001",
+      "date": "2022-05-09",
+      "category": "CRYPTO_NATIVE",
+      "subcategory": "algorithmic_stablecoin",
+      "description": "UST 算法穩定幣脫鈎，Terra 生態系統崩潰，LUNA 代幣價值歸零，市值蒸發逾 400 億美元，引發加密市場系統性拋售並加速熊市",
+      "key_entities": [
+        "Terraform Labs",
+        "Do Kwon",
+        "Luna Foundation Guard",
+        "UST",
+        "LUNA"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -6.0,
+        "48h_change_pct": -15.0,
+        "7d_change_pct": -18.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -10.0,
+        "48h_change_pct": -22.0,
+        "7d_change_pct": -30.0
+      },
+      "recovery_days": 90,
+      "max_drawdown_during_event": -28.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "irreversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20221108-001",
+      "date": "2022-11-08",
+      "category": "CRYPTO_NATIVE",
+      "subcategory": "exchange_collapse",
+      "description": "FTX 加密交易所爆發擠兌危機，CZ 宣布出售 FTT，SBF 被捕，逾 80 億美元客戶資金遭 Alameda 挪用，行業信任崩潰，觸發大規模去風險",
+      "key_entities": [
+        "FTX",
+        "Sam Bankman-Fried",
+        "Alameda Research",
+        "Binance",
+        "CZ",
+        "FTT"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -9.0,
+        "48h_change_pct": -14.0,
+        "7d_change_pct": -21.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -12.0,
+        "48h_change_pct": -18.0,
+        "7d_change_pct": -25.0
+      },
+      "recovery_days": 60,
+      "max_drawdown_during_event": -28.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "irreversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20230310-001",
+      "date": "2023-03-10",
+      "category": "BLACK_SWAN",
+      "subcategory": "bank_failure",
+      "description": "矽谷銀行因美債浮虧遭擠兌而倒閉，FDIC 接管，Circle USDC 因在 SVB 持有 33 億美元備用金而短暫脫鈎至 0.87 美元，FDIC 全額保障存款後市場迅速止跌回升",
+      "key_entities": [
+        "Silicon Valley Bank",
+        "FDIC",
+        "US Treasury",
+        "Federal Reserve",
+        "Circle",
+        "USDC"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -8.0,
+        "48h_change_pct": -5.0,
+        "7d_change_pct": 25.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -10.0,
+        "48h_change_pct": -8.0,
+        "7d_change_pct": 20.0
+      },
+      "recovery_days": 3,
+      "max_drawdown_during_event": -12.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20230322-001",
+      "date": "2023-03-22",
+      "category": "ECONOMIC",
+      "subcategory": "central_bank",
+      "description": "SVB 危機期間 Fed 仍堅持升息 25bps 至 4.75–5.0%，市場解讀為 Fed 對金融穩定具信心，加密市場承壓但有限，已自 SVB 低點大幅反彈",
+      "key_entities": [
+        "Federal Reserve",
+        "FOMC",
+        "Jerome Powell",
+        "Silicon Valley Bank"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -2.0,
+        "48h_change_pct": 0.0,
+        "7d_change_pct": 3.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -3.0,
+        "48h_change_pct": -1.0,
+        "7d_change_pct": 2.0
+      },
+      "recovery_days": 5,
+      "max_drawdown_during_event": -4.0,
+      "novelty": "repeat",
+      "escalation": "維持",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20230605-001",
+      "date": "2023-06-05",
+      "category": "REGULATORY",
+      "subcategory": "sec_enforcement",
+      "description": "SEC 同日起訴幣安和 Coinbase，指控未登記即從事證券交易，並列舉多種代幣為證券，史上最大規模同步加密執法行動，市場恐慌拋售",
+      "key_entities": [
+        "SEC",
+        "Binance",
+        "Coinbase",
+        "Gary Gensler",
+        "CZ"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -5.0,
+        "48h_change_pct": -7.0,
+        "7d_change_pct": -5.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -8.0,
+        "48h_change_pct": -9.0,
+        "7d_change_pct": -7.0
+      },
+      "recovery_days": 30,
+      "max_drawdown_during_event": -12.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "partial",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20231007-001",
+      "date": "2023-10-07",
+      "category": "GEOPOLITICAL",
+      "subcategory": "military_conflict",
+      "description": "哈馬斯突襲以色列南部，造成逾 1,200 人死亡，以方宣布進入戰爭狀態，加沙走廊衝突全面升級，但加密市場跌幅相對有限，隨即延續十月牛市",
+      "key_entities": [
+        "Hamas",
+        "Israel",
+        "Gaza",
+        "IDF",
+        "Palestinian Authority"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -3.0,
+        "48h_change_pct": -2.0,
+        "7d_change_pct": 10.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -5.0,
+        "48h_change_pct": -3.0,
+        "7d_change_pct": 8.0
+      },
+      "recovery_days": 3,
+      "max_drawdown_during_event": -5.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "partial",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240110-001",
+      "date": "2024-01-10",
+      "category": "REGULATORY",
+      "subcategory": "etf_approval",
+      "description": "SEC 正式批准 BlackRock iShares、Fidelity 等 11 家現貨比特幣 ETF，機構進場通道開啟，市場初現賣消息回調，隨後成為 2024 年 BTC 創歷史新高的主要推力",
+      "key_entities": [
+        "SEC",
+        "BlackRock",
+        "Fidelity",
+        "Grayscale",
+        "GBTC",
+        "Gary Gensler"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -2.0,
+        "48h_change_pct": -5.0,
+        "7d_change_pct": 3.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -3.0,
+        "48h_change_pct": -3.0,
+        "7d_change_pct": 2.0
+      },
+      "recovery_days": 3,
+      "max_drawdown_during_event": -8.0,
+      "novelty": "first",
+      "escalation": "緩和",
+      "reversibility": "irreversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240313-001",
+      "date": "2024-03-13",
+      "category": "CRYPTO_NATIVE",
+      "subcategory": "protocol_upgrade",
+      "description": "以太坊 Dencun 升級成功啟動 EIP-4844（proto-danksharding），Layer2 網路手續費降低逾 90%，擴容路線圖重大里程碑，市場反應正面平穩",
+      "key_entities": [
+        "Ethereum Foundation",
+        "Vitalik Buterin",
+        "EIP-4844",
+        "Arbitrum",
+        "Optimism",
+        "Base"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": 1.0,
+        "48h_change_pct": 2.0,
+        "7d_change_pct": 4.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": 2.0,
+        "48h_change_pct": 3.0,
+        "7d_change_pct": 5.0
+      },
+      "recovery_days": 0,
+      "max_drawdown_during_event": -2.0,
+      "novelty": "first",
+      "escalation": "緩和",
+      "reversibility": "irreversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240413-001",
+      "date": "2024-04-13",
+      "category": "GEOPOLITICAL",
+      "subcategory": "military_conflict",
+      "description": "伊朗首次直接對以色列發射逾 300 枚無人機和彈道飛彈，以色列防空系統攔截大多數，事件相對可控但地緣風險急升，週末市場流動性低放大跌幅",
+      "key_entities": [
+        "Iran",
+        "Israel",
+        "IRGC",
+        "IDF",
+        "US CENTCOM"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -8.0,
+        "48h_change_pct": -10.0,
+        "7d_change_pct": -6.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -11.0,
+        "48h_change_pct": -13.0,
+        "7d_change_pct": -8.0
+      },
+      "recovery_days": 14,
+      "max_drawdown_during_event": -17.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240523-001",
+      "date": "2024-05-23",
+      "category": "REGULATORY",
+      "subcategory": "etf_approval",
+      "description": "SEC 意外批准現貨以太坊 ETF 的 19b-4 申請，ETH 大幅上漲突破 3,800 美元，創加密 ETF 新紀元，S-1 申請隨後獲批，2024 年 7 月正式開始交易",
+      "key_entities": [
+        "SEC",
+        "BlackRock",
+        "21Shares",
+        "Fidelity",
+        "Gary Gensler"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": 2.0,
+        "48h_change_pct": 3.0,
+        "7d_change_pct": 4.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": 20.0,
+        "48h_change_pct": 15.0,
+        "7d_change_pct": 8.0
+      },
+      "recovery_days": 0,
+      "max_drawdown_during_event": -2.0,
+      "novelty": "first",
+      "escalation": "緩和",
+      "reversibility": "irreversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240805-001",
+      "date": "2024-08-05",
+      "category": "BLACK_SWAN",
+      "subcategory": "macro_deleveraging",
+      "description": "日本央行意外升息引發日圓急速升值，全球 carry trade 大規模平倉，日本股市創史上最大單日跌幅，加密市場流動性枯竭，BTC 單日跌逾 15%，ETH 跌近 20%",
+      "key_entities": [
+        "Bank of Japan",
+        "BOJ",
+        "Kazuo Ueda",
+        "Nikkei 225"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -16.0,
+        "48h_change_pct": -12.0,
+        "7d_change_pct": -10.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -20.0,
+        "48h_change_pct": -18.0,
+        "7d_change_pct": -15.0
+      },
+      "recovery_days": 21,
+      "max_drawdown_during_event": -25.0,
+      "novelty": "first",
+      "escalation": "升級",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20240918-001",
+      "date": "2024-09-18",
+      "category": "ECONOMIC",
+      "subcategory": "central_bank",
+      "description": "Fed 超預期降息 50 個基點至 4.75–5.0%（市場共識為 25bps），為 2020 年新冠以來首次降息，開啟降息週期，風險資產普遍上漲，加密市場跟漲",
+      "key_entities": [
+        "Federal Reserve",
+        "FOMC",
+        "Jerome Powell"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": 2.0,
+        "48h_change_pct": 3.0,
+        "7d_change_pct": 5.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": 3.0,
+        "48h_change_pct": 4.0,
+        "7d_change_pct": 6.0
+      },
+      "recovery_days": 0,
+      "max_drawdown_during_event": -1.0,
+      "novelty": "first",
+      "escalation": "緩和",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20241218-001",
+      "date": "2024-12-18",
+      "category": "ECONOMIC",
+      "subcategory": "central_bank",
+      "description": "Fed 降息 25bps 但點陣圖顯示 2025 年僅預期 2 次降息（原預期 4 次），鷹派立場遠超市場預期，美元指數大漲，加密市場急跌，BTC 從逾 10 萬美元回落",
+      "key_entities": [
+        "Federal Reserve",
+        "FOMC",
+        "Jerome Powell"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": -8.0,
+        "48h_change_pct": -12.0,
+        "7d_change_pct": -15.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": -10.0,
+        "48h_change_pct": -15.0,
+        "7d_change_pct": -18.0
+      },
+      "recovery_days": 21,
+      "max_drawdown_during_event": -18.0,
+      "novelty": "repeat",
+      "escalation": "升級",
+      "reversibility": "reversible",
+      "estimated": true
+    },
+    {
+      "event_id": "EVT-20250120-001",
+      "date": "2025-01-20",
+      "category": "REGULATORY",
+      "subcategory": "political_appointment",
+      "description": "川普就職並簽署系列行政令，任命 David Sacks 為 AI/加密貨幣協調官，承諾建立比特幣國家儲備，停止對加密行業打壓，監管大幅轉向友善，市場初升後獲利回吐",
+      "key_entities": [
+        "Donald Trump",
+        "David Sacks",
+        "White House",
+        "SEC",
+        "CFTC"
+      ],
+      "btc_reaction": {
+        "24h_change_pct": 4.0,
+        "48h_change_pct": 6.0,
+        "7d_change_pct": -4.0
+      },
+      "eth_reaction": {
+        "24h_change_pct": 5.0,
+        "48h_change_pct": 7.0,
+        "7d_change_pct": -3.0
+      },
+      "recovery_days": 3,
+      "max_drawdown_during_event": -5.0,
+      "novelty": "first",
+      "escalation": "緩和",
+      "reversibility": "reversible",
+      "estimated": true
+    }
+  ]
+}
