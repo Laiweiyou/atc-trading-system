@@ -1,0 +1,89 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2026-04-25",
+    "description": "ATC 交易系統金融詞庫，VADER 引擎使用"
+  },
+  "lexicon": {
+    "強負面": {
+      "weight_range": [-4.0, -3.0],
+      "words": {
+        "crash":      -3.5,
+        "collapse":   -3.5,
+        "plunge":     -3.0,
+        "hack":       -4.0,
+        "exploit":    -3.5,
+        "ban":        -3.0,
+        "bankruptcy": -4.0,
+        "lawsuit":    -2.5,
+        "indictment": -3.5,
+        "depeg":      -3.0
+      }
+    },
+    "中負面": {
+      "weight_range": [-2.5, -1.5],
+      "words": {
+        "sanctions":   -2.5,
+        "restriction": -2.0,
+        "decline":     -1.5,
+        "drop":        -1.5,
+        "fall":        -1.5,
+        "concern":     -1.5,
+        "delay":       -1.5,
+        "reject":      -2.5,
+        "fud":         -2.0
+      }
+    },
+    "強正面": {
+      "weight_range": [3.0, 4.0],
+      "words": {
+        "approve":      3.0,
+        "adopt":        2.5,
+        "surge":        3.0,
+        "rally":        2.5,
+        "breakthrough": 3.5,
+        "partnership":  2.5,
+        "ceasefire":    3.0
+      }
+    },
+    "中正面": {
+      "weight_range": [1.5, 2.5],
+      "words": {
+        "recovery":   2.0,
+        "rebound":    2.0,
+        "stabilize":  1.5,
+        "ease":       1.5,
+        "improve":    1.5,
+        "upgrade":    2.0,
+        "growth":     2.0,
+        "hodl":       1.5,
+        "moon":       2.0,
+        "halving":    1.5
+      }
+    },
+    "否定詞": {
+      "words": ["not", "no", "never", "neither", "nor", "don't", "doesn't",
+                "won't", "can't", "failed", "unable", "without"]
+    },
+    "數字模式": {
+      "patterns": [
+        {"regex": "up (\\d+(?:\\.\\d+)?)%",     "score_factor": 0.1, "direction": "positive"},
+        {"regex": "down (\\d+(?:\\.\\d+)?)%",   "score_factor": 0.1, "direction": "negative"},
+        {"regex": "gains? (\\d+(?:\\.\\d+)?)%", "score_factor": 0.1, "direction": "positive"},
+        {"regex": "drops? (\\d+(?:\\.\\d+)?)%", "score_factor": 0.1, "direction": "negative"},
+        {"regex": "all.?time high",              "score": 0.8,        "direction": "positive"},
+        {"regex": "all.?time low",               "score": 0.8,        "direction": "negative"}
+      ]
+    },
+    "語境反轉模式": {
+      "patterns": [
+        "failed to (ban|stop|block|reject|halt)",
+        "rejected (ban|sanctions|restrictions)",
+        "fears ease",
+        "concerns fade",
+        "recovery from",
+        "despite (crash|plunge|sell-off)"
+      ]
+    }
+  }
+}
