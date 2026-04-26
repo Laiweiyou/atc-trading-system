@@ -1,0 +1,20 @@
+squad_name: crypto
+market_type: spot
+active: true
+exchange: bybit
+base_url: https://api-demo.bybit.com
+target_symbols:
+  - ETHUSDT
+trading:
+  stage: 1
+  initial_capital_usd: 200
+  max_position_usd: 100
+risk:
+  max_daily_loss_pct: 5
+  max_drawdown_pct: 10
+  yellow_loss_pct: 2
+  orange_loss_pct: 4
+  red_loss_pct: 5
+strategies:
+  - trend_following
+  - range_trading
