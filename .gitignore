@@ -33,3 +33,7 @@ logs/
 # Local data overrides (never commit real API responses)
 *.local.json
 .env.local
+
+# Test run artifacts
+test_err.txt
+test_out.txt
