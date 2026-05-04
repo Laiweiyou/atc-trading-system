@@ -351,43 +351,17 @@ class OnChainSection:
         report_a: SubReport,
         report_b: SubReport,
     ) -> tuple[str, str, float, str]:
-        """通用比對邏輯（與 IO-01 / IO-02 一致）。"""
-        same_direction  = report_a.direction == report_b.direction
-        confidence_diff = abs(report_a.sub_confidence - report_b.sub_confidence)
-
-        if same_direction and confidence_diff <= 0.2:
-            consensus_type   = "agreed"
-            final_direction  = report_a.direction
-            final_confidence = (report_a.sub_confidence + report_b.sub_confidence) / 2
-            reasoning = f"小魏: {report_a.reasoning} | 蓮姐: {report_b.reasoning}"
-
-        elif same_direction:
-            consensus_type  = "discussed_agreed"
-            final_direction = report_a.direction
-            total_w         = report_a.sub_confidence + report_b.sub_confidence
-            final_confidence = (
-                (report_a.sub_confidence ** 2 + report_b.sub_confidence ** 2) / total_w
-            )
-            reasoning = (
-                f"方向一致但信心差異: 小魏 {report_a.sub_confidence:.2f} "
-                f"vs 蓮姐 {report_b.sub_confidence:.2f}"
-            )
-
-        else:
-            consensus_type = "dual_track"
-            severity = {"bearish": 2, "neutral": 1, "bullish": 0}
-            if severity.get(report_a.direction, 1) >= severity.get(report_b.direction, 1):
-                final_direction  = report_a.direction
-                final_confidence = report_a.sub_confidence * 0.8
-            else:
-                final_direction  = report_b.direction
-                final_confidence = report_b.sub_confidence * 0.8
-            reasoning = (
-                f"大分歧採保守: 小魏 {report_a.direction} | 蓮姐 {report_b.direction}"
-            )
-            self.logger.warning(f"IO-03 雙人大分歧: {reasoning}")
-
-        return consensus_type, final_direction, final_confidence, reasoning
+        """委派給通用雙人激辯引擎。"""
+        from trading_system.common.debate_engine import compare_reports as _engine_compare
+        result = _engine_compare(report_a, report_b, "小魏", "蓮姐")
+        if result["consensus_type"] == "dual_track":
+            self.logger.warning(f"IO-03 雙人大分歧: {result['reasoning']}")
+        return (
+            result["consensus_type"],
+            result["final_direction"],
+            result["final_confidence"],
+            result["reasoning"],
+        )
 
     def _identify_disagreement(
         self,
