@@ -194,10 +194,11 @@ class APIGateway:
     def get_server_time(self) -> dict:
         return self.request("GET", "/v5/market/time", priority=Priority.HIGH)
 
-    def get_market_kline(self, symbol: str, interval: str, limit: int = 200) -> dict:
-        return self.request("GET", "/v5/market/kline", params={
-            "category": "spot", "symbol": symbol, "interval": interval, "limit": limit,
-        })
+    def get_market_kline(self, symbol: str, interval: str, limit: int = 200, end: int = None) -> dict:
+        params = {"category": "spot", "symbol": symbol, "interval": interval, "limit": limit}
+        if end is not None:
+            params["end"] = end
+        return self.request("GET", "/v5/market/kline", params=params)
 
     def get_funding_rate(self, symbol: str, limit: int = 48) -> dict:
         return self.request("GET", "/v5/market/funding/history", params={
